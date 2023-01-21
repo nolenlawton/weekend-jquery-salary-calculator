@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekend Assignment #1</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <h1>Salary Calculator</h1>
+
+    <h2>Add Employee</h2>
+    <form id="application">
+
+        <label for="firstNameInput"></label>
+        <input id="firstNameInput" type="text" placeholder="First Name"/>
+
+        <label for="lastNameInput"></label>
+        <input id="lastNameInput" type="text" placeholder="Last Name"/>
+
+        <label for="idNumberInput"></label>
+        <input id="idNumberInput" type="number" placeholder="ID"/>
+
+        <label for="jobTitleInput"></label>
+        <input id="jobTitleInput" type="text" placeholder="Title"/>
+
+        <label for="annualSalaryInput"></label>
+        <input id="annualSalaryInput" type="number" placeholder="Annual Salary"/>
+
+        <div>
+            <button>Submit</button>
+        </div>
+
+    </form>
+
+    <h2>Employees</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Annual Salary</th>
+                <th id="emptyTh"></th>
+            </tr>
+        </thead>
+        <tbody id="employee-table">
+
+        </tbody>
+    </table>
+<div id="totalMonthly">
+    <h2>Total Monthly: $ 0</h2>
+</div>
+    
+</body>
+</html>

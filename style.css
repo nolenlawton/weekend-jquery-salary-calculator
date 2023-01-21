@@ -1,0 +1,13 @@
+th {
+    border: 1px solid;
+    padding: 10px;
+}
+  
+button {
+    border: 1px solid;
+    margin-top: 10px;
+}
+
+#emptyTh {
+    padding-left: 100px;
+}
