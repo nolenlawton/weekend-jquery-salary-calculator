@@ -1,11 +1,17 @@
 body {
     margin: 0px;
-    background-color: aliceblue
+    background-color: aliceblue;
+    color: #484a4c;
 }
 
 h1 {
     text-align: center;
-    background-color:blue;
+    background-color: #d8dfe5;
+    margin: 0px;
+    padding-top: 38px;
+    padding-bottom: 38px;
+    border-bottom: 1px solid;
+    border-color: #c0c6cc;
 }
 
 h2 {
@@ -18,6 +24,7 @@ form {
 
 td, th {
     border: 1px solid;
+    border-color: #c0c6cc;
     padding: 10px;
     margin-left: 20px;
 }
@@ -27,7 +34,7 @@ button {
     margin-top: 10px;
 }
 
-#emptyTh {
+.emptyTh {
     padding-left: 100px;
 }
 
@@ -36,4 +43,12 @@ table {
     margin-left: 20px;
 }
 
+#totalMonthly {
+    border-top: 1px;
+    margin: 0px
+}
+
+.red-background {
+    background-color: #FF4C4C;
+}
 

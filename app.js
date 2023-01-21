@@ -1,10 +1,8 @@
-console.log('JavaScript')
-
 $(document).ready(onReady)
 
-function onReady() {
-    console.log('JQuery')
+let employeesArray = []
 
+function onReady() {
     $('#application').on('submit', addEmployee)
 
     $(document).on('click', '.deleteButton', deleteEmployee)
@@ -12,12 +10,8 @@ function onReady() {
     render()
 }
 
-let employeesArray = []
-
 function addEmployee(event) {
     event.preventDefault();
-
-    console.log('addEmployee')
 
     let employee = {
         firstName: $('#firstNameInput').val(),
@@ -26,15 +20,12 @@ function addEmployee(event) {
         jobTitle: $('#jobTitleInput').val(),
         annualSalary: $('#annualSalaryInput').val()
     }
-
     employeesArray.push(employee);
 
     totalMonthly();
-
     render();
 
     $('#application input').val('')
-    
 }
 
 function deleteEmployee() {
@@ -59,14 +50,11 @@ function totalMonthly() {
 }
 
 function render() {
-    console.log('render:')
-    console.log(totalMonthly())
-
     if(totalMonthly() > 20000) {
-        $('#totalMonthly').css('background-color', '#FF4C4C')
+        $('#totalMonthly').addClass('red-background');
     }
     else {
-        $('#totalMonthly').css('background-color', 'white')
+        $('#totalMonthly').removeClass('red-background');
     }
 
     $('#employee-table').empty()
@@ -80,6 +68,7 @@ function render() {
             <td>${employee.id}</td>
             <td>${employee.jobTitle}</td>
             <td>${employee.annualSalary}</td>
+            <td><button class='editButton'>Edit</button></td>
             <td><button class='deleteButton'>Delete</button></td>
         </tr>
         `)
