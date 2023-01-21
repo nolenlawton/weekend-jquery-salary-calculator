@@ -38,7 +38,6 @@ function addEmployee(event) {
     }
     employeesArray.push(employee);
 
-    totalMonthly();
     render();
 }
 
