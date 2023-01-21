@@ -40,20 +40,19 @@ function addEmployee(event) {
 
     totalMonthly();
     render();
-
-    $('#application input').val('')
 }
 
 function deleteEmployee() {
-    let employeeIndex = $(this).parent().parent().index();
-    employeesArray.splice(employeeIndex, 1)
+    let employeeIndexToRemove = $(this).parent().parent().index();
+    employeesArray.splice(employeeIndexToRemove, 1)
+
+    employeeIndex = undefined
 
     render()
 }
 
 function editEmployee() {
     employeeIndex = $(this).parent().parent().index();
-    console.log(employeeIndex)
     render()
 }
 
@@ -65,19 +64,18 @@ function cancelEditedEmployee(){
 function addEditedEmployee(){
     console.log('add')
 
-    let employee = {
+    let editedEmployee = {
         firstName: $('#editFirstName').val(),
         lastName: $('#editLastName').val(),
         id: $('#editId').val(),
         jobTitle: $('#editJobTitle').val(),
         annualSalary: $('#editAnnualSalary').val()
     }
-    employeesArray.push(employee);
+    employeesArray.splice(employeeIndex, 1, editedEmployee);
+    employeeIndex = undefined
 
     totalMonthly();
     render();
-
-    $('#application input').val('')
 }
 
 function totalMonthly() {
@@ -106,8 +104,8 @@ function render() {
 
     for(let employee of employeesArray) {
 
+        // edit employee row
         if(employeesArray.indexOf(employee) === employeeIndex) {
-
             $('#employee-table').append(`
                 <tr>
                     <td><input id='editFirstName' type='text' value='${employeesArray[employeeIndex].firstName}'/></td>
@@ -121,9 +119,8 @@ function render() {
             `)
         }
 
+        // regular table row
         else {
-
-
             $('#employee-table').append(`
             <tr>
                 <td>${employee.firstName}</td>
@@ -141,4 +138,6 @@ function render() {
     $('#totalMonthly').append(`
         <h2>Total Monthly: $ ${totalMonthly()}
     `)
+
+    $('#application input').val('')
 }
