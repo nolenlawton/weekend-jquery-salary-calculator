@@ -1,6 +1,25 @@
-th {
+body {
+    margin: 0px;
+    background-color: aliceblue
+}
+
+h1 {
+    text-align: center;
+    background-color:blue;
+}
+
+h2 {
+    margin-left: 20px;
+}
+
+form {
+    margin-left: 20px;
+}
+
+td, th {
     border: 1px solid;
     padding: 10px;
+    margin-left: 20px;
 }
   
 button {
@@ -11,3 +30,10 @@ button {
 #emptyTh {
     padding-left: 100px;
 }
+
+table {
+    border-collapse: collapse;
+    margin-left: 20px;
+}
+
+

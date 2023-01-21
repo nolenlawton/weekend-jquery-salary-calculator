@@ -7,14 +7,15 @@ function onReady() {
 
     $('#application').on('submit', addEmployee)
 
+    $(document).on('click', '.deleteButton', deleteEmployee)
+
     render()
 }
 
 let employeesArray = []
 
-function addEmployee(event)  {
+function addEmployee(event) {
     event.preventDefault();
-
 
     console.log('addEmployee')
 
@@ -32,12 +33,17 @@ function addEmployee(event)  {
 
     render();
 
-    $('#firstNameInput').val(''),
-    $('#lastNameInput').val(''),
-    $('#idNumberInput').val(''),
-    $('#jobTitleInput').val(''),
-    $('#annualSalaryInput').val('')
+    $('#application input').val('')
     
+}
+
+function deleteEmployee() {
+    console.log('hello')
+    let employeeIndex = $(this).parent().parent().index();
+    console.log(employeeIndex)
+    employeesArray.splice(employeeIndex, 1)
+
+    render()
 }
 
 function totalMonthly() {
@@ -47,18 +53,21 @@ function totalMonthly() {
         total += Number(employee.annualSalary);
     }
 
-    total /= 12;
+    let monthlyTotal = total /= 12;
 
-    if(total > 20000) {
-        $('#totalMonthly').css('background-color', '#FF4C4C')
-    }
-
-    return total
+    return monthlyTotal
 }
 
 function render() {
     console.log('render:')
     console.log(totalMonthly())
+
+    if(totalMonthly() > 20000) {
+        $('#totalMonthly').css('background-color', '#FF4C4C')
+    }
+    else {
+        $('#totalMonthly').css('background-color', 'white')
+    }
 
     $('#employee-table').empty()
     $('#totalMonthly').empty()
@@ -66,12 +75,12 @@ function render() {
     for(let employee of employeesArray) {
         $('#employee-table').append(`
         <tr>
-            <th>${employee.firstName}</th>
-            <th>${employee.lastName}</th>
-            <th>${employee.id}</th>
-            <th>${employee.jobTitle}</th>
-            <th>${employee.annualSalary}</th>
-            <th><button>Delete</button></th>
+            <td>${employee.firstName}</td>
+            <td>${employee.lastName}</td>
+            <td>${employee.id}</td>
+            <td>${employee.jobTitle}</td>
+            <td>${employee.annualSalary}</td>
+            <td><button class='deleteButton'>Delete</button></td>
         </tr>
         `)
     }
