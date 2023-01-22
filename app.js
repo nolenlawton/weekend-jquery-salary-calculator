@@ -37,8 +37,14 @@ function addEmployee(event) {
         annualSalary: $('#annualSalaryInput').val()
     }
     employeesArray.push(employee);
-
+    
+    playAddAudio()
     render();
+}
+
+function playAddAudio() {
+    let audio = document.getElementById("audioAdd");
+    audio.play();
 }
 
 function deleteEmployee() {
@@ -47,7 +53,13 @@ function deleteEmployee() {
 
     employeeIndex = undefined
 
+    playRemoveAudio()
     render()
+}
+
+function playRemoveAudio() {
+    let audio = document.getElementById("audioRemove");
+    audio.play();
 }
 
 function editEmployee() {
@@ -73,7 +85,7 @@ function addEditedEmployee(){
     employeesArray.splice(employeeIndex, 1, editedEmployee);
     employeeIndex = undefined
 
-    totalMonthly();
+    playAddAudio();
     render();
 }
 
@@ -134,9 +146,14 @@ function render() {
         }
     }  
 
-    $('#totalMonthly').append(`
-        <h2>Total Monthly: $ ${totalMonthly()}
-    `)
+    let formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    });
+
+    let usDollars = formatter.format(totalMonthly())
+
+    $('#totalMonthly').append(`<h2>Total Monthly: ${usDollars}</h2>`)
 
     $('#application input').val('')
 }

@@ -13,19 +13,20 @@
     <h1>Salary Calculator</h1>
 
     <h2>Add Employee</h2>
-    <form id="application">
 
+    <!-- form to fill out with submit button -->
+    <form id="application">
         <input id="firstNameInput" type="text" placeholder="First Name"/>
         <input id="lastNameInput" type="text" placeholder="Last Name"/>
         <input id="idNumberInput" type="number" placeholder="ID"/>
         <input id="jobTitleInput" type="text" placeholder="Title"/>
         <input id="annualSalaryInput" type="number" placeholder="Annual Salary"/>
-        <button class="button submit">Submit</button>
-
+        <button class="button submit">Submit<audio id="audioAdd" src="ding.mp3"><audio id="audioRemove" src="delete.mp3"></audio></audio></button>
     </form>
 
     <h2>Employees</h2>
 
+    <!-- table to place added employees -->
     <table>
         <thead>
             <tr>
@@ -39,12 +40,11 @@
             </tr>
         </thead>
         <tbody id="employee-table">
-
         </tbody>
     </table>
-<div id="totalMonthly">
-    <h2>Total Monthly: $ 0</h2>
-</div>
+
+    <div id="totalMonthly">
+    </div>
     
 </body>
 </html>

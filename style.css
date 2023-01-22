@@ -12,7 +12,6 @@ h1 {
     padding-bottom: 38px;
     border-bottom: 1px solid;
     border-color: #c0c6cc;
-    text-decoration: underline;
 }
 
 form {
@@ -33,6 +32,7 @@ table {
 
 thead {
     background-color: #d8dfe5;
+    font-family: Tahoma;
 }
 
 td, th {
