@@ -12,14 +12,22 @@ h1 {
     padding-bottom: 38px;
     border-bottom: 1px solid;
     border-color: #c0c6cc;
+    text-decoration: underline;
 }
 
 h2 {
-    margin-left: 20px;
+    margin: 20px;
 }
 
 form {
-    margin-left: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid;
+    border-color: #c0c6cc;
+}
+
+thead {
+    background-color: #d8dfe5;
 }
 
 td, th {
@@ -28,19 +36,26 @@ td, th {
     padding: 10px;
     margin-left: 20px;
 }
+
+tr:nth-child(even) {
+    background-color: #d8dfe5;
+}
   
 button {
     border: 1px solid;
-    margin-top: 10px;
-}
-
-.emptyTh {
-    padding-left: 100px;
+    display: flex;
+    margin-right:  20px;
 }
 
 table {
     border-collapse: collapse;
-    margin-left: 20px;
+    width: 100%;
+}
+
+input {
+    width: 100px;
+    padding: 6px;
+    margin-right: 6px;
 }
 
 #totalMonthly {
@@ -48,7 +63,28 @@ table {
     margin: 0px
 }
 
+.submit {
+    float: right;
+}
+
 .red-background {
     background-color: #FF4C4C;
 }
 
+.emptyTh {
+    padding-left: 100px;
+}
+
+.button {
+    background-color: #d8dfe5;
+    color: #484a4c;
+    padding: 6px 6px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    align-items: center;
+}
+
+.buttonBox {
+    margin:auto;
+}

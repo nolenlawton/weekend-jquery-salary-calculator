@@ -106,14 +106,14 @@ function render() {
         // edit employee row
         if(employeesArray.indexOf(employee) === employeeIndex) {
             $('#employee-table').append(`
-                <tr>
+                <tr id='editRow'>
                     <td><input id='editFirstName' type='text' value='${employeesArray[employeeIndex].firstName}'/></td>
                     <td><input id='editLastName' type='text' value='${employeesArray[employeeIndex].lastName}'/></td>
                     <td><input id='editId' type='number' value='${employeesArray[employeeIndex].id}'/></td>
                     <td><input id='editJobTitle' type='text' value='${employeesArray[employeeIndex].jobTitle}'/></td>
                     <td><input id='editAnnualSalary' type='number' value='${employeesArray[employeeIndex].annualSalary}'/></td>
-                    <td><button class='cancelButton'>Cancel</button></td>
-                    <td><button class='addButton'>Add</button></td>
+                    <td class='buttonBox'><button class='cancelButton button'>Cancel</button></td>
+                    <td class='buttonBox'><button class='addButton button'>Add</button></td>
                 </tr>
             `)
         }
@@ -127,8 +127,8 @@ function render() {
                 <td>${employee.id}</td>
                 <td>${employee.jobTitle}</td>
                 <td>${employee.annualSalary}</td>
-                <td><button class='editButton'>Edit</button></td>
-                <td><button class='deleteButton'>Delete</button></td>
+                <td class='buttonBox'><button class='editButton button'>Edit</button></td>
+                <td class='buttonBox'><button class='deleteButton button'>Delete</button></td>
             </tr>
             `)
         }
