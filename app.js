@@ -64,11 +64,19 @@ function playRemoveAudio() {
 
 function editEmployee() {
     employeeIndex = $(this).parent().parent().index();
+
+    playEditedAudio()
     render()
+}
+
+function playEditedAudio () {
+    let audio = document.getElementById("audioEdit");
+    audio.play();
 }
 
 function cancelEditedEmployee(){
     employeeIndex = undefined;
+    playRemoveAudio()
     render()
 }
 
